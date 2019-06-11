@@ -236,7 +236,7 @@ def problem0b(n):
 
     count = 0
     for k in range(n - 1):
-        if is_prime(k+2) == True:
+        if is_prime(k + 2):
             count = count + 1
 
     return count
@@ -307,6 +307,21 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ####################################################################
     # ------------------------------------------------------------------
+
+    circle.attach_to(window)
+
+    r = circle.radius
+    x = circle.center.x + (2 * r)
+    y = circle.center.y
+
+    for _ in range(n):
+        row_center = rg.Point(x, y)
+        row_circle = rg.Circle(row_center, r)
+        row_circle.attach_to(window)
+
+        x = x + (2 * r)
+
+    window.render(0.5)
 
 
 # ----------------------------------------------------------------------
