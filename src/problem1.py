@@ -183,7 +183,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.
     # ------------------------------------------------------------------
@@ -193,10 +193,37 @@ def run_test_problem1b():
     #    TIME ESTIMATE:   15 minutes.
     # ------------------------------------------------------------------
     print()
-    print('--------------------------------------------------')
+    print('-----------------------------------')
     print('Testing the   problem1b   function:')
-    print('--------------------------------------------------')
+    print('-----------------------------------')
 
+    # Test 1:
+    expected = 5
+    answer = problem1b(3, 5)
+    print()
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 1
+    answer = problem1b(2, 1)
+    print()
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 44
+    answer = problem1b(5, 40)
+    print()
+    print('Test 3 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 0
+    answer = problem1b(99, 0)
+    print()
+    print('Test 4 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
 def problem1b(m, f):
     """
