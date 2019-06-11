@@ -5,6 +5,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
          their colleagues and Junfei Cai.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import math
+
 ########################################################################
 # Students:
 #
@@ -139,6 +141,7 @@ def run_test_problem1a():
     print('Test 4 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
+
 def problem1a(m, n):
     """
     What comes in:  Integers m and n with abs(m) <= abs(n).
@@ -157,7 +160,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -165,6 +168,16 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
+
+    sin_sum = 0
+    m_square = m ** 2
+    n_square = n ** 2
+
+    for k in range(m_square, n_square + 1):
+        sin_sum = sin_sum + math.sin(k)
+        # print(k)    #uncomment to check k
+
+    return sin_sum
 
 
 def run_test_problem1b():
