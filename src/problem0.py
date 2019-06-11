@@ -234,6 +234,13 @@ def problem0b(n):
     ####################################################################
     # ------------------------------------------------------------------
 
+    count = 0
+    for k in range(n - 1):
+        if is_prime(k+2) == True:
+            count = count + 1
+
+    return count
+
 
 def run_test_problem0c():
     """ Tests the   problem0c  function. """
