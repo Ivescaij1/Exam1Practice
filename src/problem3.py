@@ -104,18 +104,18 @@ def run_test_problem3a():
     # ------------------------------------------------------------------
 
     # Window 4:
-    title = 'Problem 3a. Test 1: Start at (30, 30), 6 lines'
+    title = 'Problem 3a. Test 5: Start at (5, 5), 20 lines'
     window4 = rg.RoseWindow(350, 200, title)
 
     # Test 5 (it is on window 4):
     point = rg.Point(5, 5)
-    expected = 25
-    answer = problem3a(window4, point, 5)
+    expected = 218
+    answer = problem3a(window4, point, 20)
     print()
     print('Test 5 expected:', expected)
     print('       actual:  ', answer)
 
-    window1.close_on_mouse_click()
+    window4.close_on_mouse_click()
 
 
 def problem3a(window, point, n):
@@ -248,7 +248,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -261,6 +261,32 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
+
+    # Construct rg window
+    title = 'problem 3b'
+    window3b = rg.RoseWindow(500, 1000,title)
+
+    # withdraw initial start point coordination
+    start_x = point1.x
+    start_y = point1.y
+
+    # define initial n of function 3a, and total
+    number_of_lines = 3
+    total = 0
+
+    # loop with for
+    for _ in range(m):
+        start = rg.Point(start_x, start_y)
+        total = total + problem3a(window3b, start, number_of_lines)
+
+        start_y = start_y + 60
+
+        number_of_lines = number_of_lines + 2
+
+    window3b.close_on_mouse_click()
+
+    return total
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
