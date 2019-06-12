@@ -110,14 +110,29 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+
+    # window and initial display
     circle.attach_to(window)
     rectangle.attach_to(window)
 
+    window.render()
+    window.continue_on_mouse_click()
+
+    # withdraw variables
     p1 = rectangle.get_upper_right_corner()
-    p1 = rectangle.get_lower_left_corner()
+    p2 = rectangle.get_lower_left_corner()
+    color_change = rectangle.outline_color
 
+    # 1st click, draw arrow
+    line = rg.Line(p1, p2)
+    line.arrow = 'last'
+    line.attach_to(window)
 
+    window.render()
+    window.continue_on_mouse_click()
 
+    # 2nc click, change color
+    circle.fill_color = color_change
     window.render()
 
 
