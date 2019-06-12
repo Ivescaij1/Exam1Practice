@@ -117,6 +117,7 @@ def run_test_problem3a():
 
     window1.close_on_mouse_click()
 
+
 def problem3a(window, point, n):
     """
     See   problem3a_picture.pdf   in this project for pictures
@@ -150,7 +151,7 @@ def problem3a(window, point, n):
         :type n:      int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -158,6 +159,39 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # ------------------------------------------------------------------
+
+    # Withdraw point coordination and define initial value
+    start_x = point.x
+    start_y = point.y
+    end_x = point.x
+    end_y = point.y + 50
+
+    thickness = 1
+    sum_3a = 0
+
+    # draw lines with for loop
+    for _ in range(n):
+        start = rg.Point(start_x, start_y)
+        end = rg.Point(end_x , end_y)
+        line = rg.Line(start, end)
+        line.thickness = thickness
+        line.attach_to(window)
+
+        sum_3a = sum_3a + thickness
+
+        if thickness + 2 < 13:      # construct thickness i=limit by if
+            thickness = thickness + 2
+        else:
+            thickness = 13
+        # print(thickness)      # Uncomment to check the detail thickness in loop
+
+        start_x = start_x + 20
+        start_y = start_y + 10
+        end_x = end_x + 20
+        end_y = end_y + 10
+
+    window.render()
+    return sum_3a
 
 
 def run_test_problem3b():
